@@ -1,0 +1,81 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36310.24
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Itens de Solução", "Itens de Solução", "{380A7511-A354-6D7A-0CC0-8FA1F1BA7B6C}"
+	ProjectSection(SolutionItems) = preProject
+		Glossario.md = Glossario.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{259F3D29-ECF0-4262-B03B-404008B4BFEB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Apps", "Apps", "{37AFD5D1-C34A-4A49-9AB8-5A4DED9D16E5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Contextos", "Contextos", "{FBF42D67-9762-480C-870A-D1062B82450E}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\..\downloads\ContainRs.DDD-video-4.3\ContainRs.DDD-video-4.3\src\Contextos\Directory.Build.props = ..\..\..\..\downloads\ContainRs.DDD-video-4.3\ContainRs.DDD-video-4.3\src\Contextos\Directory.Build.props
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContainerFlow.API", "src\Apps\ContainerFlow.API\ContainerFlow.API.csproj", "{C13554EE-647A-6152-089F-BAAEB04D977A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContainerFlow.Vendas", "src\Contextos\ContainerFlow.Vendas\ContainerFlow.Vendas.csproj", "{821F5264-E9AE-AC0E-EBAA-D56DD852D24A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContainerFlow.Testes", "tests\ContainerFlow.Testes\ContainerFlow.Testes.csproj", "{079BF2DD-183A-347A-8550-18D8A8A4788F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContainerFlow.Contracts", "src\ContainerFlow.Contracts\ContainerFlow.Contracts.csproj", "{EFAEF794-F947-11C9-72D5-0E69DDCAAB73}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContainerFlow.Clientes", "src\Contextos\ContainerFlow.Clientes\ContainerFlow.Clientes.csproj", "{79E1A3FD-98C2-45AD-B805-92497DCDCEC7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContainerFlow.Engenharia", "src\Contextos\ContainerFlow.Engenharia\ContainerFlow.Engenharia.csproj", "{3ADB82FE-71B3-40BB-B010-863E0E821433}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C13554EE-647A-6152-089F-BAAEB04D977A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C13554EE-647A-6152-089F-BAAEB04D977A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C13554EE-647A-6152-089F-BAAEB04D977A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C13554EE-647A-6152-089F-BAAEB04D977A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{821F5264-E9AE-AC0E-EBAA-D56DD852D24A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{821F5264-E9AE-AC0E-EBAA-D56DD852D24A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{821F5264-E9AE-AC0E-EBAA-D56DD852D24A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{821F5264-E9AE-AC0E-EBAA-D56DD852D24A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{079BF2DD-183A-347A-8550-18D8A8A4788F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{079BF2DD-183A-347A-8550-18D8A8A4788F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{079BF2DD-183A-347A-8550-18D8A8A4788F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{079BF2DD-183A-347A-8550-18D8A8A4788F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFAEF794-F947-11C9-72D5-0E69DDCAAB73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFAEF794-F947-11C9-72D5-0E69DDCAAB73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFAEF794-F947-11C9-72D5-0E69DDCAAB73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFAEF794-F947-11C9-72D5-0E69DDCAAB73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79E1A3FD-98C2-45AD-B805-92497DCDCEC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79E1A3FD-98C2-45AD-B805-92497DCDCEC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79E1A3FD-98C2-45AD-B805-92497DCDCEC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79E1A3FD-98C2-45AD-B805-92497DCDCEC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3ADB82FE-71B3-40BB-B010-863E0E821433}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3ADB82FE-71B3-40BB-B010-863E0E821433}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3ADB82FE-71B3-40BB-B010-863E0E821433}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3ADB82FE-71B3-40BB-B010-863E0E821433}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{37AFD5D1-C34A-4A49-9AB8-5A4DED9D16E5} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{FBF42D67-9762-480C-870A-D1062B82450E} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{C13554EE-647A-6152-089F-BAAEB04D977A} = {37AFD5D1-C34A-4A49-9AB8-5A4DED9D16E5}
+		{821F5264-E9AE-AC0E-EBAA-D56DD852D24A} = {FBF42D67-9762-480C-870A-D1062B82450E}
+		{079BF2DD-183A-347A-8550-18D8A8A4788F} = {259F3D29-ECF0-4262-B03B-404008B4BFEB}
+		{EFAEF794-F947-11C9-72D5-0E69DDCAAB73} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{79E1A3FD-98C2-45AD-B805-92497DCDCEC7} = {FBF42D67-9762-480C-870A-D1062B82450E}
+		{3ADB82FE-71B3-40BB-B010-863E0E821433} = {FBF42D67-9762-480C-870A-D1062B82450E}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4503455D-9D81-4D36-A91D-AEF36ED5021D}
+	EndGlobalSection
+EndGlobal
