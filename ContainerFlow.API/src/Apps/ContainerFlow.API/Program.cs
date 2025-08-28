@@ -1,13 +1,9 @@
 using ContainerFlow.API.Data;
 using ContainerFlow.API.Data.Repositories;
 using ContainerFlow.API.Identity;
+using ContainerFlow.Financeiro.Faturamento;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using ContainerFlow.Contracts;
-using ContainerFlow.Vendas.Propostas;
-using ContainerFlow.Vendas.Locacoes;
-using ContainerFlow.Clientes.Cadastro;
-using ContainerFlow.Engenharia.Containers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -31,6 +27,7 @@ builder.Services.AddScoped<IRepository<PedidoLocacao>, SolicitacaoRepository>();
 builder.Services.AddScoped<IRepository<Proposta>, PropostaRepository>();
 builder.Services.AddScoped<IRepository<Locacao>, LocacaoRepository>();
 builder.Services.AddScoped<IRepository<Conteiner>, ConteinerRepository>();
+builder.Services.AddScoped<IRepository<Fatura>, FaturaRepository>();
 
 builder.Services
     .AddIdentityApiEndpoints<AppUser>(options => options.SignIn.RequireConfirmedEmail = true)

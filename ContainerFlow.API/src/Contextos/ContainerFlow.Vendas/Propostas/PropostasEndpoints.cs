@@ -37,8 +37,6 @@ public static class PropostasEndpoints
                 [FromServices] IRepository<Proposta> repoProposta
                 ) =>
             {
-                // salvar arquivo no sistema de arquivos configurado (não será feito neste curso)
-
                 var solicitacao = await repoSolicitacao
                     .GetFirstAsync(s => s.Id == id, s => s.Id);
                 if (solicitacao is null) return Results.NotFound();
