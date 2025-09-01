@@ -92,6 +92,13 @@ public static class SolicitacoesEndpoints
             {
                 solicitacao.EnderecoId = request.Localizacao.EnderecoId.Value;
             }
+            else
+            {
+                solicitacao.Localizacao = new Endereco()
+                {
+                    CEP = request.Localizacao.CEP ?? "00000-010",
+                };
+            }
 
             await repository.AddAsync(solicitacao);
 

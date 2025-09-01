@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\ContainerFlow.Contracts\ContainerFlow.Contracts.csproj" />
+    <ProjectReference Include="..\..\ContainerFlow.DDD\ContainerFlow.DDD.csproj" />
   </ItemGroup>
 
 </Project>

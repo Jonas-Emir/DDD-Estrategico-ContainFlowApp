@@ -1,4 +1,6 @@
-﻿namespace ContainerFlow.Vendas.Propostas;
+﻿using ContainerFlow.DDD;
+
+namespace ContainerFlow.Vendas.Propostas;
 
 public record SituacaoProposta(string Status)
 {
@@ -22,12 +24,27 @@ public record SituacaoProposta(string Status)
     }
 }
 
-public class Proposta
+public record ValorMonetario
 {
-    public Proposta() { }
+    public ValorMonetario(decimal valor)
+    {
+        if (valor < 0) valor = 0;
+        Valor = valor;
+    }
+
+    public decimal Valor { get; }
+}
+
+public class Proposta : IAgreggateRoot
+{
+    public ICollection<IDomainEvent> Events { get; }
+    public Proposta()
+    {
+        Events = new List<IDomainEvent>();
+    }
     public Guid Id { get; set; }
     public SituacaoProposta Situacao { get; set; } = SituacaoProposta.Enviada;
-    public decimal ValorTotal { get; set; }
+    public ValorMonetario ValorTotal { get; set; }
     public DateTime DataCriacao { get; set; }
     public DateTime DataExpiracao { get; set; }
     public string NomeArquivo { get; set; }
@@ -38,12 +55,26 @@ public class Proposta
 
     public Comentario AddComentario(Comentario comentario)
     {
-        Comentarios.Add(comentario);
+        if (Situacao == SituacaoProposta.Enviada)
+            Comentarios.Add(comentario);
         return comentario;
     }
 
     public void RemoveComentario(Comentario comentario)
     {
         Comentarios.Remove(comentario);
+    }
+
+    public bool Aprovar()
+    {
+        if (Situacao != SituacaoProposta.Enviada) return false;
+        Situacao = SituacaoProposta.Aceita;
+        Events.Add(new PropostaAprovada(Id, ValorTotal.Valor));
+        return true;
+    }
+
+    public void RemoverEventos()
+    {
+        Events.Clear();
     }
 }

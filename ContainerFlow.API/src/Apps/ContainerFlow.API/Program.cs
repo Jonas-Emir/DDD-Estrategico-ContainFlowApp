@@ -1,7 +1,9 @@
+using ContainerFlow.Api.Eventos;
 using ContainerFlow.API.Data;
 using ContainerFlow.API.Data.Repositories;
 using ContainerFlow.API.Identity;
 using ContainerFlow.Financeiro.Faturamento;
+using Hangfire;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -28,6 +30,11 @@ builder.Services.AddScoped<IRepository<Proposta>, PropostaRepository>();
 builder.Services.AddScoped<IRepository<Locacao>, LocacaoRepository>();
 builder.Services.AddScoped<IRepository<Conteiner>, ConteinerRepository>();
 builder.Services.AddScoped<IRepository<Fatura>, FaturaRepository>();
+builder.Services.AddScoped<IEventoManager, EventoManager>();
+
+builder.Services.AddScoped<ICalculadoraPrazosLocacao, CalculadoraPadraoPrazosLocacao>();
+builder.Services.AddScoped<IPropostaService, PropostaService>();
+builder.Services.AddScoped<IAcessoManager, AcessoManagerWithIdentity>();
 
 builder.Services
     .AddIdentityApiEndpoints<AppUser>(options => options.SignIn.RequireConfirmedEmail = true)
@@ -40,6 +47,12 @@ builder.Services.Configure<IdentityOptions>(options =>
 {
     options.ClaimsIdentity.UserIdClaimType = "ClienteId";
 });
+
+builder.Services.AddHangfire(config =>
+{
+    config.UseSqlServerStorage(builder.Configuration.GetConnectionString("ContainerFlowDB"));
+}).AddHangfireServer(options =>
+    options.SchedulePollingInterval = TimeSpan.FromSeconds(5));
 
 var app = builder.Build();
 
@@ -61,5 +74,14 @@ app
     .MapPropostasEndpoints()
     .MapLocacoesEndpoints()
     .MapConteineresEndpoints();
+
+// EmissorDeFaturas
+app.Services
+    .GetRequiredService<IRecurringJobManager>()
+    .AddOrUpdate<EmissorDeFaturas>(
+        nameof(EmissorDeFaturas),
+        job => job.ExecutarAsync(),
+        Cron.Minutely
+    );
 
 app.Run();

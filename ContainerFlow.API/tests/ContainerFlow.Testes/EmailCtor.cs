@@ -13,6 +13,5 @@ public class EmailCtor
 
         // act & assert
         Assert.Throws<ArgumentException>(() => new Email(emailInvalido));
-
     }
 }
