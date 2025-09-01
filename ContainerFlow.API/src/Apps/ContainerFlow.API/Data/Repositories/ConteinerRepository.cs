@@ -1,5 +1,4 @@
-﻿using ContainerFlow.Engenharia.Containers;
-
+﻿
 namespace ContainerFlow.API.Data.Repositories;
 
 public class ConteinerRepository : BaseRepository<Conteiner>

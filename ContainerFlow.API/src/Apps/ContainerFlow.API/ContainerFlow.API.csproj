@@ -9,6 +9,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Hangfire" Version="1.8.21" />
+    <PackageReference Include="Hangfire.SqlServer" Version="1.8.21" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.13" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.11" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.7" />
@@ -25,6 +27,7 @@
     <ProjectReference Include="..\..\ContainerFlow.Contracts\ContainerFlow.Contracts.csproj" />
     <ProjectReference Include="..\..\Contextos\ContainerFlow.Clientes\ContainerFlow.Clientes.csproj" />
     <ProjectReference Include="..\..\Contextos\ContainerFlow.Engenharia\ContainerFlow.Engenharia.csproj" />
+    <ProjectReference Include="..\..\Contextos\ContainerFlow.Financeiro\ContainerFlow.Financeiro.csproj" />
     <ProjectReference Include="..\..\Contextos\ContainerFlow.Vendas\ContainerFlow.Vendas.csproj" />
   </ItemGroup>
 

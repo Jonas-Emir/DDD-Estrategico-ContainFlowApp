@@ -1,6 +1,4 @@
-﻿using ContainerFlow.Clientes.Cadastro;
-using ContainerFlow.Contracts;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 
 namespace ContainerFlow.API.Data.Repositories;
